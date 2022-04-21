@@ -7,7 +7,7 @@
 
   <h1>HZC Skate</h1>
   <p>
-  Página de uma comunidade de skate, desenvolvido através do curso de CSS: dispondo elementos com Flexbox e Grid da plataforma Alura
+  Página de uma comunidade de skate, desenvolvido através do curso de CSS: dispondo elementos com Flexbox e Grid, da plataforma Alura
   </p>
 
   <div>
