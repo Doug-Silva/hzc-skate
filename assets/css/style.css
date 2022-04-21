@@ -79,7 +79,7 @@ body {
         display: block;
         width: 32px;
         height: 32px;
-        background-image: url(../img/profile_2.png);
+        background-image: url(../img/profile.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -201,6 +201,10 @@ body {
         padding: 16px 60px;
         grid-column: 2;
     }
+
+    .titulo-secao {
+        grid-column: span 4;
+    }
 }
 
 .cartao {
@@ -208,6 +212,10 @@ body {
     border-radius: 15px;
     overflow: hidden;
     background-color: #2C343A;
+}
+
+.cartao__imagem--desktop {
+    display: none;
 }
 
 .cartao--destaque {
@@ -253,6 +261,11 @@ body {
     margin-right: 8px;
 }
 
+.card_info--moeda::before {
+    content: "\e905";
+    margin-right: 8px;
+}
+
 .cartao__botao {
     display: flex;
     justify-content: center;
@@ -265,8 +278,17 @@ body {
     justify-self: flex-end;
 }
 
+.cartao__botao:hover {
+    cursor: pointer;
+}
+
 .cartao__botao--play::before {
     content: "\e90b";
+    font-size: 24px;
+}
+
+.cartao__botao--compra::before {
+    content: "\e901";
     font-size: 24px;
 }
 
@@ -284,6 +306,23 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
+    .cartao--destaque {
+        margin-bottom: 0;
+    }
+
+    .cartao__imagem--mobile {
+        display: none;
+    }
+
+    .cartao__imagem--desktop {
+        display: block;
+    }
+
+    .cartao__botao--destaque {
+        grid-column: auto;
+        padding: 16px 8px;
+    }
+
     .cartao--recentes {
         display: grid;
         grid-template-columns: auto auto;
@@ -292,6 +331,7 @@ body {
         width: 256px;
         padding: 16px;
         box-sizing: border-box;
+        align-self: flex-start;
     }
 
     .cartao--recentes .cartao__titulo {
@@ -339,26 +379,32 @@ body {
     gap: 16px;
 }
 
-.destaque-video {
-    grid-area: destaque-video;
-}
+@media screen and (min-width: 1440px) {
+    .secao {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
-.videos-recentes {
-    grid-area: videos-recentes;
-}
+    .destaque-video {
+        grid-area: destaque-video;
+    }
 
-.secao-videos {
-    grid-area: secao-videos;
-}
+    .videos-recentes {
+        grid-area: videos-recentes;
+    }
 
-.destaque-produtos {
-    grid-area: destaque-produtos;
-}
+    .secao-videos {
+        grid-area: secao-videos;
+    }
 
-.produtos-recentes {
-    grid-area: produtos-recentes;
-}
+    .destaque-produtos {
+        grid-area: destaque-produtos;
+    }
 
-.secao-produtos {
-    grid-area: secao-produtos;
+    .produtos-recentes {
+        grid-area: produtos-recentes;
+    }
+
+    .secao-produtos {
+        grid-area: secao-produtos;
+    }
 }
